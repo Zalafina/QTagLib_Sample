@@ -1,0 +1,20 @@
+#include "contentsprovider.h"
+
+ContentsProvider* ContentsProvider::mp_this = NULL;
+
+ContentsProvider::ContentsProvider(QObject *parent) : QObject(parent)
+{
+    registeInstance(this);
+}
+
+ContentsProvider *ContentsProvider::instance(void)
+{
+    Q_ASSERT(mp_this != NULL);
+
+    return mp_this;
+}
+
+void ContentsProvider::registeInstance(ContentsProvider *pInstance)
+{
+    mp_this = pInstance;
+}
