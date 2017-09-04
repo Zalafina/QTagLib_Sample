@@ -14,6 +14,12 @@ ContentsProvider *ContentsProvider::instance(void)
     return mp_this;
 }
 
+QString ContentsProvider::getImagePath(void)
+{
+    qDebug("ContentsProvider::getImagePath()");
+    return QString("pics/image_01.png");
+}
+
 void ContentsProvider::registeInstance(ContentsProvider *pInstance)
 {
     mp_this = pInstance;

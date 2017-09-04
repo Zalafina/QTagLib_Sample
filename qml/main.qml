@@ -1,4 +1,5 @@
 import QtQuick 2.0
+import Qt.qtaglib.contentsProvider 1.0
 
 Rectangle {
     width: 720
@@ -7,7 +8,8 @@ Rectangle {
     Image {
         id: bitmap_Sample;
         anchors.fill: parent;
-        source: "pics/image_01.png"
+        //source: "pics/image_01.png"
+        source: Provider.getImagePath()
     }
 
     MouseArea {

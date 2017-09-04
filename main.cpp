@@ -14,8 +14,8 @@ int main(int argc, char *argv[])
 
     ContentsProvider * const contentsprovider = new ContentsProvider(&app);
 
+    qmlRegisterSingletonType<ContentsProvider>("Qt.qtaglib.contentsProvider", 1, 0, "Provider", contentsprovider_provider);
     viewer.rootContext()->setContextProperty("contentsprovider", contentsprovider);
-//    viewer.rootContext()->setContextProperty("myModel", QVariant::fromValue(mytest->m_dataList));
 
     WorkerThread * const workerthread = new WorkerThread();
     // Move to a sub thread
