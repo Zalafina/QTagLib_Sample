@@ -3,12 +3,16 @@
 #include <QQmlContext>
 #include <QThread>
 #include <QQuickView>
+#include <QStyleHints>
 #include "contentsprovider.h"
 #include "workerthread.h"
 
 int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
+
+    QGuiApplication::styleHints()->setMousePressAndHoldInterval(3000);
+    qDebug("Default PressAndHoldInterval:%d", QGuiApplication::styleHints()->mousePressAndHoldInterval());
 
     QQuickView viewer;
 

@@ -18,6 +18,11 @@ Rectangle {
             console.log("Image Clicked!");
             //Qt.quit();
         }
+
+        onPressAndHold: {
+            console.log("Image PressAndHold!");
+            //Qt.quit();
+        }
     }
 
 }
